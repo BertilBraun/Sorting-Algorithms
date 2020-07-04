@@ -68,9 +68,12 @@ public:
 	}
 
 	bool Complete() {
-		for (int i = 1; i < size(); i++)
+		for (int i = 1; i < size(); i++) {
+			data.getCol(i) = 0;
+			Display();
 			if (data.get(i) < data.get(i - 1))
 				return false;
+		}
 		return true;
 	}
 
